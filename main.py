@@ -5,8 +5,12 @@ from starlette.responses import Response
 from core.db import SessionLocal
 
 app = FastAPI(
-    title="My Application!"
+    title="My App!"
 )
+
+@app.get('/')
+def index():
+    return "Hello World!"
 
 app.include_router(ad_router)
 

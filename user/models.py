@@ -1,9 +1,6 @@
 from sqlalchemy import Column, String, Integer
 from core.db import Base
+from fastapi_users.db import SQLAlchemyBaseUserTable
 
-class User(Base):
-    __tablename__ = "users"
-    id = Column(Integer, primary_key=True, index=True, unique=True)
+class User(Base,SQLAlchemyBaseUserTable):
     name = Column(String, nullable=False)
-    email = Column(String, nullable=False)
-    password = Column(String, nullable=False)
