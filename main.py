@@ -10,7 +10,7 @@ app = FastAPI(
 
 @app.get('/')
 def index():
-    return "Salom Dunyo!"
+    return "Hello World!"
 
 app.include_router(ad_router)
 
